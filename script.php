@@ -9,8 +9,30 @@
 //~ 5. Creare una variabile per confermare se tutti e tre i campi richiesti sono stati riempiti.
 //~ 6. Stampare il messaggio di 'Accesso Riuscito' in caso di successo oppure 'Accesso Negato' in caso di fallimento.
 
+    // ------------------------------------------ //
+
+//# RACCOLGO GLI ELEMENTI
+
+//* - 1
+
+$age = $_GET['age'];
+$name = $_GET['name'];
+$email = $_GET['email'];
+
+//# EFFETIVO SVOLGIMENTO
+
+//* - 2 / - 3 / - 4
+
+$is_age_valid = is_numeric($age) && $age > 0;
+$is_name_valid = mb_strlen(trim($name)) > 3;
+$is_email_valid = str_contains($email, '@') && str_contains($email, '.');
 
 
+$is_form_invalid = !$is_age_valid || !$is_name_valid || !$is_email_valid;
+
+$message = $is_form_invalid ? 'Accesso Negato' : 'Accesso Riuscito';
+
+echo $message;
 ?>
 
 
