@@ -32,10 +32,10 @@ $matches = [
 
 <body>
     <ul>
-        <?php foreach ($matches as $match => $value) : ?>
-            <li><?= $value["home_team"] ?> - <?= $value["away_team"] ?> | <?= $value["score_home_team"] ?>-<?= $value["score_away_team"] ?></li>
+        <?php foreach ($matches as $match) : ?>
+            <li><?= $match['home_team'] ?> - <?= $match['away_team'] ?> | <?= $match['score_home_team'] ?>-<?= $match['score_away_team'] ?></li>
         <?php endforeach; ?>
-    </ul>
+    </ul'>
 </body>
 
 </html>
